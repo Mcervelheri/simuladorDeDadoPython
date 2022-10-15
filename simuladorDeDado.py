@@ -7,7 +7,7 @@ class simuladorDeDado:
         self.valorMáximo = 6
         self.mensagem = 'você gostaria de gerar um novo valor para o dado? '
         self.layout = [
-            [sg.Image(filename='semDado.png',key='output')],
+            [sg.Image(filename='Images/semDado.png',key='output')],
             [sg.Text('Jogar o dado?',key='text')],
             [sg.Button('sim'),sg.Button('não')]
         ]
@@ -30,7 +30,7 @@ class simuladorDeDado:
 
     def gerarValorDoDado(self):
         resultado = int(random.randint(self.valorMínimo,self.valorMáximo))
-        dados = ['dado1.png', 'dado2.png', 'dado3.png', 'dado4.png', 'dado5.png', 'dado6.png']
+        dados = ['Images/dado1.png', 'Images/dado2.png', 'Images/dado3.png', 'Images/dado4.png', 'Images/dado5.png', 'Images/dado6.png']
         print(resultado)
         self.janela['output'].update(filename=dados[resultado-1])
         self.janela['text'].update('Jogar dado novamente?')  # type: ignore
